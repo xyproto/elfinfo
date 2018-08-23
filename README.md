@@ -19,3 +19,4 @@ Example usage:
     /usr/bin/ls: stripped=true, compiler=GCC 6.3.1, byteorder=LittleEndian, machine=Advanced Micro Devices x86-64
 
 * Version: 0.6
+* License: MIT
