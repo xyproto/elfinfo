@@ -12,11 +12,11 @@ Installation (development version):
 
 Example usage:
 
-    $ elfinfo -c /bin/sh
-    GCC 6.1.1
+    $ elfinfo -c sh
+    GCC 8.1.1
 
     $ elfinfo /usr/bin/ls
-    /usr/bin/ls: stripped=true, compiler=GCC 6.3.1, byteorder=LittleEndian, machine=Advanced Micro Devices x86-64
+    /usr/bin/ls: stripped=true, compiler=GCC 8.2.0, byteorder=LittleEndian, machine=Advanced Micro Devices x86-64
 
-* Version: 0.6
+* Version: 0.7
 * License: MIT

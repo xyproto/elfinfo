@@ -4,15 +4,17 @@ package main
 import (
 	"bytes"
 	"debug/elf"
+	"errors"
 	"fmt"
 	"math"
 	"os"
+	"path"
 	"regexp"
 	"strconv"
 	"strings"
 )
 
-const versionString = "ELFinfo 0.6"
+const versionString = "ELFinfo 0.7"
 
 var (
 	gccMarker   = []byte("GCC: (")
@@ -393,6 +395,24 @@ func usage() {
 	fmt.Println()
 }
 
+// Check if the given filename exists.
+// If it exists in $PATH, return the full path,
+// else return an empty string.
+func which(filename string) (string, error) {
+	_, err := os.Stat(filename)
+	if !os.IsNotExist(err) {
+		return filename, nil
+	}
+	for _, directory := range strings.Split(os.Getenv("PATH"), ":") {
+		fullPath := path.Join(directory, filename)
+		_, err := os.Stat(fullPath)
+		if !os.IsNotExist(err) {
+			return fullPath, nil
+		}
+	}
+	return "", errors.New(filename + ": no such file or directory")
+}
+
 func main() {
 	if len(os.Args) == 2 {
 		if os.Args[1] == "-h" || os.Args[1] == "--help" {
@@ -400,11 +420,21 @@ func main() {
 		} else if os.Args[1] == "-v" || os.Args[1] == "--version" {
 			fmt.Println(versionString)
 		} else {
-			examine(os.Args[1], false)
+			filepath, err := which(os.Args[1])
+			if err != nil {
+				fmt.Fprintln(os.Stderr, err)
+				os.Exit(1)
+			}
+			examine(filepath, false)
 		}
 	} else if len(os.Args) == 3 {
 		if os.Args[1] == "-c" || os.Args[1] == "--compiler" {
-			examine(os.Args[2], true)
+			filepath, err := which(os.Args[2])
+			if err != nil {
+				fmt.Fprintln(os.Stderr, err)
+				os.Exit(1)
+			}
+			examine(filepath, true)
 		} else {
 			usage()
 		}
