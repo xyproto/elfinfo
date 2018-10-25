@@ -4,7 +4,7 @@
 
 Tiny program for emitting the most basic information about an ELF file.
 
-Can detect the compiler used for compiling a given binary, even if it is stripped. The following languages/compilers are supprted:
+Can detect the compiler used for compiling a given binary, even if it is stripped. The following languages/compilers are supported:
 
 * GCC
 * Clang
