@@ -4,7 +4,15 @@
 
 Tiny program for emitting the most basic information about an ELF file.
 
-Can detect the compiler used to compile even a stripped binary for Go, GCC and FPC.
+Can detect the compiler used for compiling a given binary, even if it is stripped. The following languages/compilers are supprted:
+
+* GCC
+* Clang
+* FPC
+* OCaml
+* Go
+* TCC (compiler name only, TCC does not store the version number in the executables)
+* Rust (for stripped executables, only the compiler name and GCC version used for linking are available)
 
 ## Installation (development version)
 
