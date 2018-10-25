@@ -4,19 +4,29 @@
 
 Tiny program for emitting only the most basic information about an ELF file.
 
-Can detect the compiler used to compile even a stripped binary for Go, GCC and FPC.
+Can detect the compiler used for compiling a given binary, even if it is stripped. The following languages/compilers are supprted:
 
-Installation (development version):
+* GCC
+* Clang
+* FPC
+* OCaml
+* Go
+* TCC (compiler name only, TCC does not store the version number in the executables)
+* Rust (for stripped executables, only the compiler name and GCC version used for linking are available)
+
+## Installation (development version)
 
     go get github.com/xyproto/elfinfo
 
-Example usage:
+## Example usage
 
     $ elfinfo -c sh
     GCC 8.1.1
 
     $ elfinfo /usr/bin/ls
     /usr/bin/ls: stripped=true, compiler=GCC 8.2.0, byteorder=LittleEndian, machine=Advanced Micro Devices x86-64
+
+## General info
 
 * Version: 0.7
 * License: MIT
