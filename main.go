@@ -276,7 +276,11 @@ func stripped(f *elf.File) bool {
 func examine(filename string, onlyCompilerInfo bool) {
 	f, err := elf.Open(filename)
 	if err != nil {
-		fmt.Printf("%s: %s\n", filename, err.Error())
+		if strings.Contains(err.Error(), "bad magic number '[") {
+			fmt.Printf("\033[1;33m%s: %s\033[0m\n", filename, "not an ELF")
+		} else {
+			fmt.Printf("\033[1;31m%s: %s\033[0m\n", filename, err.Error())
+		}
 		os.Exit(1)
 	}
 	defer f.Close()
@@ -296,15 +300,17 @@ func usage() {
 	fmt.Println("    elfinfo [OPTION]... [FILE]")
 	fmt.Println()
 	fmt.Println("Options:")
-	fmt.Println("    -c, --compiler          - only detect compiler name and version")
+	fmt.Println("    -c, --compiler          - only detect the compiler name and version")
+	// TODO: Introduce a nocolor flag, while at the same time introducing docopt.go
+	//fmt.Println("    -n, --nocolor           - no colors in the output")
 	fmt.Println("    -v, --version           - version info")
 	fmt.Println("    -h, --help              - this help output")
 	fmt.Println()
 }
 
-// Check if the given filename exists.
-// If it exists in $PATH, return the full path,
-// else return an empty string.
+// If it exists in $PATH, return the full path.
+// If the given filename exists in the local directory, return that.
+// Else return an empty string.
 func which(filename string) (string, error) {
 	_, err := os.Stat(filename)
 	if !os.IsNotExist(err) {
