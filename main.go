@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-const versionString = "ELFinfo 0.7.2"
+const versionString = "ELFinfo 0.7.3"
 
 var (
 	gccMarker   = []byte("GCC: (")
