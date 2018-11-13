@@ -16,7 +16,7 @@ Can detect the compiler used for compiling a given binary, even if it is strippe
 
 ## Installation (development version)
 
-    go get github.com/xyproto/elfinfo
+    go get -u github.com/xyproto/elfinfo
 
 ## Example usage
 
@@ -28,6 +28,6 @@ Can detect the compiler used for compiling a given binary, even if it is strippe
 
 ## General info
 
-* Version: 0.7.3
+* Version: 0.7.4
 * License: MIT
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
