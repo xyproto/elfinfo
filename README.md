@@ -1,4 +1,4 @@
-<a style="float: right" href="https://github.com/xyproto/elfinfo"><img src="https://raw.githubusercontent.com/xyproto/elfinfo/master/web/elfinfo.png" style="margin-left: 2em" width="200px"></a>
+<a align="right" href="https://github.com/xyproto/elfinfo"><img align="right" src="https://raw.githubusercontent.com/xyproto/elfinfo/master/web/elfinfo.png" style="margin-left: 2em" width="200px"></a>
 
 # ELFinfo
 
