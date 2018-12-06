@@ -13,6 +13,7 @@ Can detect the compiler used for compiling a given binary, even if it is strippe
 * Go
 * TCC (compiler name only, TCC does not store the version number in the executables)
 * Rust (for stripped executables, only the compiler name and GCC version used for linking are available)
+* GHC
 
 ## Installation (development version)
 
@@ -28,10 +29,8 @@ Can detect the compiler used for compiling a given binary, even if it is strippe
 
 ## General info
 
-* Version: 0.7.4
-* License: MIT
+* Version: 0.7.5
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
-
-## License
+* License: MIT
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxyproto%2Felfinfo.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxyproto%2Felfinfo?ref=badge_large)

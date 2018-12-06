@@ -1,4 +1,4 @@
-//usr/bin/go run $0 $@ ; exit
+//usr/bin/go run $0 $@; exit
 package main
 
 import (
@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	versionString = "ELFInfo 0.7.4"
+	versionString = "ELFInfo 0.7.5"
 
 	usage = versionString + `
 
@@ -31,10 +31,10 @@ Options:
 `
 )
 
-// which finds files in $PATH
-// If it exists in $PATH, return the full path.
-// If the given filename exists in the local directory, return that.
-// Else return an empty string.
+// which finds files in the paths in the PATH environment variable.
+// If the file exists in $PATH, return the full path.
+// If the file exists in the local directory, return that.
+// If not, return an empty string.
 func which(filename string) (string, error) {
 	_, err := os.Stat(filename)
 	if !os.IsNotExist(err) {
@@ -50,6 +50,8 @@ func which(filename string) (string, error) {
 	return "", errors.New(filename + ": no such file or directory")
 }
 
+// examine tries to detect compiler name and compiler version from a given
+// ELF filename.
 func examine(filename string, onlyCompilerInfo, noColor bool) {
 	f, err := elf.Open(filename)
 	if err != nil {
