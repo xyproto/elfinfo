@@ -1,6 +1,8 @@
 module github.com/xyproto/elfinfo
 
+go 1.12
+
 require (
 	github.com/docopt/docopt-go v0.0.0-20180111231733-ee0de3bc6815
-	github.com/xyproto/ainur v1.1.0
+	github.com/xyproto/ainur v1.1.1
 )
