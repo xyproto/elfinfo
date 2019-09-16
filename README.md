@@ -29,8 +29,6 @@ Can detect the compiler used for compiling a given binary, even if it is strippe
 
 ## General info
 
-* Version: 0.7.5
+* Version: 0.7.6
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
 * License: MIT
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxyproto%2Felfinfo.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxyproto%2Felfinfo?ref=badge_large)
