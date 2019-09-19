@@ -27,6 +27,10 @@ Can detect the compiler used for compiling a given binary, even if it is strippe
     $ elfinfo /usr/bin/ls
     /usr/bin/ls: stripped=true, compiler=GCC 8.2.0, byteorder=LittleEndian, machine=Advanced Micro Devices x86-64
 
+## Distro Packages
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/elfinfo.svg)](https://repology.org/project/elfinfo/versions)
+
 ## General info
 
 * Version: 0.7.6
