@@ -15,7 +15,9 @@ Can detect the compiler used for compiling a given binary, even if it is strippe
 * Rust (for stripped executables, only the compiler name and GCC version used for linking are available)
 * GHC
 
-## Installation (development version)
+## Installation
+
+This requires Go 1.12 or later and will install the development version:
 
     go get -u github.com/xyproto/elfinfo
 
