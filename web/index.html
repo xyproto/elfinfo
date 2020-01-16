@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
-<meta content="text/html; charset=UTF-8" http-equiv="content-type" /><title>elfinfo</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" /><title>ELFinfo</title>
 <meta content="Alexander F. Rødseth" name="author" />
 </head>
 <body style="direction: ltr; background-color: rgb(249, 255, 249); color: rgb(0, 0, 0);" alink="red" link="#ff6600" vlink="#993300" background="subtle.png">
@@ -18,7 +18,7 @@
 is it?</span>
 </div>
 <div style="margin-left: 200px;"><br />
-elfinfo is a small utility for showing information about ELF files<br />
+ELFinfo is a small utility for showing information about ELF files<br />
 <br />
 <br />
 </div>
@@ -33,7 +33,7 @@ It can detect compiler version for files compiled with the Go, GCC, OCaml or FPC
 </div>
 <div style="margin-left: 200px;"><br />
   Running this command:<br /><br />
-<span style="font-family: Courier New,Courier,monospace; font-weight: bold;">elfinfo /usr/bin/ls</span><br/>
+<span style="font-family: Courier New,Courier,monospace; font-weight: bold;">elfinfo -l /usr/bin/ls</span><br/>
 <br />
 Gives this output:<br />
 <br />
@@ -49,8 +49,8 @@ The details will be different for other platforms.<br />
 <li>It only shows the most basic of information about ELF files.</li>
 <li>It can show which compiler was used for compiling a binary, even after it has been stripped.</li>
 <li>It aims to solve a tiny problem properly instead of a thousand problems halfway, in true UNIX-spirit.</li>
-<li>The methods for retrieving the compiler version for exectuables are different for Go, GCC, OCaml and FPC. <span style="font-family: Courier New,Courier,monospace;">elfinfo</span> handles all three.</li>
-<li>Discovering the GCC version number from an executable may involve using the <span style="font-family: Courier New,Courier,monospace;">string</span> command and look for the first string that pops up and looks like a version number. <span style="font-family: Courier New,Courier,monospace;">elfinfo</span> only looks at specific sections in the ELF file.</li>
+<li>The methods for retrieving the compiler version for exectuables are different for Go, GCC, OCaml and FPC. <span style="font-family: Courier New,Courier,monospace;">ELFinfo</span> handles all three.</li>
+<li>Discovering the GCC version number from an executable may involve using the <span style="font-family: Courier New,Courier,monospace;">string</span> command and look for the first string that pops up and looks like a version number. <span style="font-family: Courier New,Courier,monospace;">ELFinfo</span> only looks at specific sections in the ELF file.</li>
 </ul>
 <br />
 </div>
@@ -73,7 +73,7 @@ The details will be different for other platforms.<br />
 </div>
 <div style="margin-left: 200px;">
     <br />
-    The source and issue tracker is available at <a href="https://github.com/xyproto/elfinfo">github</a>.<br />
+    The source and issue tracker is available at <a href="https://github.com/xyproto/elfinfo">GitHub</a>.<br />
     <br />
 <span style="font-family: Courier New,Courier,monospace; font-weight: bold;">
     git clone git://github.com/xyproto/elfinfo.git</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;" />
@@ -88,7 +88,7 @@ The details will be different for other platforms.<br />
 
     <div style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">64-bit Linux</div>
     <p style="margin-left: 42px;">
-    The following commands downloads the latest binary release from <a href="https://github.com/xyproto/elfinfo/releases">github</a> and installs it:
+    The following commands downloads the latest binary release from <a href="https://github.com/xyproto/elfinfo/releases">GitHub</a> and installs it:
     <br />
     </p>
     <pre>
@@ -134,7 +134,7 @@ The details will be different for other platforms.<br />
 </div>
 <div style="margin-left: 200px;">
     <br />
-    <a href="https://github.com/xyproto/elfinfo/releases/download/1.0.0/elfinfo-1.0.0.tar.xz">elfinfo 1.0.0</a><br />
+    <a href="https://github.com/xyproto/elfinfo/releases/download/1.0.0/elfinfo-1.0.0.tar.xz">ELFinfo 1.0.0</a><br />
 </div>
 
 <div style="text-align: right;"><span style="font-size: 0.8em">Alexander F. Rødseth, 2020</span></div>
