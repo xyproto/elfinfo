@@ -107,5 +107,9 @@ func main() {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
-	examine(filepath, !arguments["--long"].(bool), arguments["--nocolor"].(bool))
+
+	// Respect the NO_COLOR environment variable
+	noColor := os.Getenv("NO_COLOR") != ""
+
+	examine(filepath, !arguments["--long"].(bool), noColor || arguments["--nocolor"].(bool))
 }
