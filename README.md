@@ -19,7 +19,7 @@ Can detect the compiler used for compiling a given binary, even if it is strippe
 
 ## Installation
 
-This requires Go 1.12 or later and will install the development version:
+This requires Go 1.11 or later and will install the development version:
 
     go get -u github.com/xyproto/elfinfo
 
@@ -37,6 +37,6 @@ This requires Go 1.12 or later and will install the development version:
 
 ## General info
 
-* Version: 0.7.6
+* Version: 0.7.7
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
 * License: MIT
