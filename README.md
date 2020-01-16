@@ -37,6 +37,6 @@ This requires Go 1.11 or later and will install the development version:
 
 ## General info
 
-* Version: 0.7.7
+* Version: 1.0.0
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
 * License: MIT
