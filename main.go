@@ -19,12 +19,12 @@ const (
 	usage = versionString + `
 
 Usage:
-  elfinfo [-c | --compiler] [-n | --nocolor] <ELF>
+  elfinfo [-l | --long] [-n | --nocolor] <ELF>
   elfinfo -h | --help
   elfinfo --version
 
 Options:
-  -c --compiler    Only output compiler name and version.
+  -l --long        Also output stripped status, byte order and target machine.
   -n --nocolor     No colors in text output.
   --version        Version info.
   -h --help        Show this screen.
@@ -61,6 +61,12 @@ func examine(filename string, onlyCompilerInfo, noColor bool) {
 			} else {
 				fmt.Printf("\033[1;33m%s: %s\033[0m\n", filename, "not an ELF")
 			}
+		} else if strings.Contains(err.Error(), "is a directory") {
+			if noColor {
+				fmt.Printf("%s: %s\n", filename, "is a directory")
+			} else {
+				fmt.Printf("\033[1;31m%s: %s\033[0m\n", filename, "is a directory")
+			}
 		} else {
 			if noColor {
 				fmt.Printf("%s: %s\n", filename, err)
@@ -73,7 +79,11 @@ func examine(filename string, onlyCompilerInfo, noColor bool) {
 	defer f.Close()
 
 	if onlyCompilerInfo {
-		fmt.Printf("%v\n", ainur.Compiler(f))
+		if noColor {
+			fmt.Printf("%v\n", ainur.Compiler(f))
+		} else {
+			fmt.Printf("\033[1;34m%v\033[0m\n", ainur.Compiler(f))
+		}
 		return
 	}
 
@@ -97,5 +107,5 @@ func main() {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
-	examine(filepath, arguments["--compiler"].(bool), arguments["--nocolor"].(bool))
+	examine(filepath, !arguments["--long"].(bool), arguments["--nocolor"].(bool))
 }
