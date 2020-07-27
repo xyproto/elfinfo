@@ -19,13 +19,13 @@ const (
 	usage = versionString + `
 
 Usage:
-  elfinfo [-l | --long] [-n | --nocolor] <ELF>
+  elfinfo [-l | --long] [-c | --color] <ELF>
   elfinfo -h | --help
   elfinfo --version
 
 Options:
   -l --long        Also output stripped status, byte order and target machine.
-  -n --nocolor     No colors in text output.
+  -c --color       Color the text output (unless NO_COLOR is set).
   --version        Version info.
   -h --help        Show this screen.
 `
@@ -111,5 +111,5 @@ func main() {
 	// Respect the NO_COLOR environment variable
 	noColor := os.Getenv("NO_COLOR") != ""
 
-	examine(filepath, !arguments["--long"].(bool), noColor || arguments["--nocolor"].(bool))
+	examine(filepath, !arguments["--long"].(bool), noColor || !arguments["--color"].(bool))
 }
