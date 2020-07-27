@@ -87,7 +87,10 @@ func examine(filename string, onlyCompilerInfo, noColor bool) {
 		return
 	}
 
-	fmt.Printf("%s: stripped=%v, compiler=%v, byteorder=%v, machine=%v\n", filename, ainur.Stripped(f), ainur.Compiler(f), f.ByteOrder, ainur.Describe(f.Machine))
+	// Use the short version of LittleEndian and BigEndian
+	byteOrder := strings.Replace(strings.Replace(f.ByteOrder.String(), "LittleEndian", "LE", 1), "BigEndian", "BE", 1)
+
+	fmt.Printf("%s: stripped=%v, compiler=%v, static=%v, byteorder=%v, machine=%v\n", filename, ainur.Stripped(f), ainur.Compiler(f), ainur.Static(f), byteOrder, ainur.Describe(f.Machine))
 }
 
 func main() {
