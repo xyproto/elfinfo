@@ -26,10 +26,10 @@ This requires Go 1.11 or later and will install the development version:
 ## Example usage
 
     $ elfinfo sh
-    GCC 8.1.1
+    GCC 10.1.0
 
     $ elfinfo -l /usr/bin/ls
-    /usr/bin/ls: stripped=true, compiler=GCC 8.2.0, byteorder=LittleEndian, machine=Advanced Micro Devices x86-64
+    /usr/bin/ls: stripped=true, compiler=GCC 9.2.1, static=false, byteorder=LE, machine=Advanced Micro Devices x86-64
 
 ## Distro Packages
 
@@ -37,6 +37,6 @@ This requires Go 1.11 or later and will install the development version:
 
 ## General info
 
-* Version: 1.0.1
+* Version: 1.1.0
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
 * License: MIT

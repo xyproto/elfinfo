@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	versionString = "ELFinfo 1.0.1"
+	versionString = "ELFinfo 1.1.0"
 
 	usage = versionString + `
 
