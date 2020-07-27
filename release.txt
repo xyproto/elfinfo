@@ -1,0 +1,13 @@
+TODO: Automate the following release steps:
+
+* Bump the version number in `main.go`.
+* Bump the version number in `README.md`.
+* Bump the version numbers in `web/index.html`.
+* Tag and push.
+* Build a source tarball with `release.sh`.
+* Build an executable with `static.sh`.
+* Create a new GitHub release and upload the tarball and executable.
+* On the server, under `/srv`, git clone the latest version.
+* Restart Algernon.
+* Check that the `curl` command on the webpage works.
+* Update the AUR package.
