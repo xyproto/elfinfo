@@ -1,8 +1,8 @@
 # ELFinfo
 
-<a align="center" href="https://github.com/xyproto/elfinfo"><img alt="ELFinfo logo" src="https://raw.githubusercontent.com/xyproto/elfinfo/master/web/elfinfo.png" width="200px"></a>
+<a align="center" href="https://github.com/xyproto/elfinfo"><img alt="ELFinfo logo" src="https://raw.githubusercontent.com/xyproto/elfinfo/main/web/elfinfo.png" width="200px"></a>
 
-[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/xyproto/elfinfo/master/LICENSE) [![Go Report Card](https://goreportcard.com/badge/github.com/xyproto/elfinfo)](https://goreportcard.com/report/github.com/xyproto/elfinfo)
+[![License](http://img.shields.io/badge/license-BSD-green.svg?style=flat)](https://raw.githubusercontent.com/xyproto/elfinfo/main/LICENSE) [![Go Report Card](https://goreportcard.com/badge/github.com/xyproto/elfinfo)](https://goreportcard.com/report/github.com/xyproto/elfinfo)
 
 Tiny program for emitting the most basic information about an ELF file.
 
@@ -19,9 +19,9 @@ Can detect the compiler used for compiling a given binary, even if it is strippe
 
 ## Installation
 
-This requires Go 1.11 or later and will install the development version:
+For Go >=1.17:
 
-    go get -u github.com/xyproto/elfinfo
+    go install github.com/xyproto/elfinfo@latest
 
 ## Example usage
 
@@ -37,6 +37,6 @@ This requires Go 1.11 or later and will install the development version:
 
 ## General info
 
-* Version: 1.1.0
+* Version: 1.2.0
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
-* License: MIT
+* License: BSD-3
