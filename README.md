@@ -37,6 +37,6 @@ For Go >=1.17:
 
 ## General info
 
-* Version: 1.2.0
+* Version: 1.2.1
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
 * License: BSD-3
