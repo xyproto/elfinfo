@@ -3,7 +3,6 @@ package main
 
 import (
 	"debug/elf"
-	"errors"
 	"fmt"
 	"os"
 	"path"
@@ -14,7 +13,7 @@ import (
 )
 
 const (
-	versionString = "ELFinfo 1.1.0"
+	versionString = "ELFinfo 1.2.1"
 
 	usage = versionString + `
 
@@ -24,10 +23,10 @@ Usage:
   elfinfo --version
 
 Options:
-  -l --long        Also output stripped status, byte order and target machine.
   -c --color       Color the text output (unless NO_COLOR is set).
-  --version        Version info.
   -h --help        Show this screen.
+  -l --long        Also output stripped status, byte order and target machine.
+  --version        Version info.
 `
 )
 
@@ -36,18 +35,16 @@ Options:
 // If the file exists in the local directory, return that.
 // If not, return an empty string.
 func which(filename string) (string, error) {
-	_, err := os.Stat(filename)
-	if !os.IsNotExist(err) {
+	if _, err := os.Stat(filename); !os.IsNotExist(err) {
 		return filename, nil
 	}
 	for _, directory := range strings.Split(os.Getenv("PATH"), ":") {
 		fullPath := path.Join(directory, filename)
-		_, err := os.Stat(fullPath)
-		if !os.IsNotExist(err) {
+		if _, err := os.Stat(fullPath); !os.IsNotExist(err) {
 			return fullPath, nil
 		}
 	}
-	return "", errors.New(filename + ": no such file or directory")
+	return "", fmt.Errorf("%s: no such file or directory", filename)
 }
 
 // examine tries to detect compiler name and compiler version from a given
