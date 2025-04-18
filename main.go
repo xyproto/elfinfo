@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	versionString = "ELFinfo 1.2.2"
+	versionString = "ELFinfo 1.2.3"
 	description   = "Detect the compiler version, given an ELF executable."
 
 	usage = versionString + "\n" + description + `
