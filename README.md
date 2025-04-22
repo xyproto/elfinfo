@@ -2,7 +2,7 @@
 
 <a align="center" href="https://github.com/xyproto/elfinfo"><img alt="ELFinfo logo" src="https://raw.githubusercontent.com/xyproto/elfinfo/main/web/elfinfo.png" width="200px"></a>
 
-[![License](http://img.shields.io/badge/license-BSD-green.svg?style=flat)](https://raw.githubusercontent.com/xyproto/elfinfo/main/LICENSE) [![Go Report Card](https://goreportcard.com/badge/github.com/xyproto/elfinfo)](https://goreportcard.com/report/github.com/xyproto/elfinfo)
+[![License](http://img.shields.io/badge/license-BSD-green.svg?style=flat)](https://raw.githubusercontent.com/xyproto/elfinfo/main/LICENSE) [![Go Report Card](https://goreportcard.com/badge/github.com/xyproto/elfinfo)](https://goreportcard.com/report/github.com/xyproto/elfinfo) [![Build](https://github.com/xyproto/elfinfo/actions/workflows/test.yml/badge.svg)](https://github.com/xyproto/elfinfo/actions/workflows/test.yml)
 
 Tiny program for emitting the most basic information about an ELF file.
 
